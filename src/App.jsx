@@ -17,12 +17,12 @@ function App() {
         <button className="add-button" onClick={handleAdd}>
           Add
         </button>
-        <button
-          className="sub-button"
-          onClick={handleSub}
-          disabled={count === 0 ? true : false}
-        >
+        <button className="sub-button" onClick={handleSub}>
           Subtract
+        </button>
+
+        <button className="button reset-button" onClick={() => setCount(0)}>
+          Reset
         </button>
       </div>
     </div>

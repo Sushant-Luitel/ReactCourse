@@ -1,10 +1,10 @@
 .container {
   text-align: center;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   background-color: #f3f5f8;
   box-shadow: 5px 5px 10px rgb(69, 66, 66);
-  min-height: 100px;
+  min-height: 200px;
 }
 
 button {
@@ -30,4 +30,8 @@ button:hover {
 
 .sub-button {
   background-color: green;
+}
+
+.reset-button {
+  background-color: rgb(38, 136, 223);
 }
