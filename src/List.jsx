@@ -18,6 +18,7 @@ const List = () => {
       completed: true,
     },
   ]);
+  const [ShowText, setShowText] = useState(false);
 
   const handleDelete = (id) => {
     let newTask = tasks.filter((task) => {
@@ -28,23 +29,31 @@ const List = () => {
 
   return (
     <div className="container">
-      <ul>
-        {tasks.map((task) => (
-          <li className="row container list-item" key={task.id}>
-            <div className="col">
-              <span>{task.id}</span> - <span>{task.name}</span>
-            </div>
-            <div className="col">
-              <button
-                className="button add-button"
-                onClick={() => handleDelete(task.id)}
-              >
-                Delete
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <button
+        className="button reset-button"
+        onClick={() => setShowText(!ShowText)}
+      >
+        {ShowText ? "Hide" : "Show"}
+      </button>
+      {ShowText && (
+        <ul>
+          {tasks.map((task) => (
+            <li className="row container list-item" key={task.id}>
+              <div className="col">
+                <span>{task.id}</span> - <span>{task.name}</span>
+              </div>
+              <div className="col">
+                <button
+                  className="button add-button"
+                  onClick={() => handleDelete(task.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
