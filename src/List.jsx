@@ -18,16 +18,29 @@ const List = () => {
       completed: true,
     },
   ]);
+
+  const handleDelete = (id) => {
+    let newTask = tasks.filter((task) => {
+      return task.id !== id;
+    });
+    setTasks(newTask);
+  };
+
   return (
     <div className="container">
       <ul>
         {tasks.map((task) => (
-          <li className="row">
+          <li className="row container list-item" key={task.id}>
             <div className="col">
               <span>{task.id}</span> - <span>{task.name}</span>
             </div>
             <div className="col">
-              <button className="button add-button">Delete</button>
+              <button
+                className="button add-button"
+                onClick={() => handleDelete(task.id)}
+              >
+                Delete
+              </button>
             </div>
           </li>
         ))}

@@ -14,11 +14,15 @@ li {
 
 .container {
   padding: 1em;
-  width: 50%;
+  width: 80%;
   margin: 1em auto;
   background-color: #f3f5f8;
   box-shadow: 5px 5px 10px rgb(69, 66, 66);
-  min-height: 200px;
+}
+.list-item {
+  box-shadow: none;
+  background-color: white;
+  font-weight: 700;
 }
 
 .row {
