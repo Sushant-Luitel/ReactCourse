@@ -1,3 +1,4 @@
+import { BoxCard } from "./BoxCard";
 import { ListItem } from "./ListItem";
 import React, { useState } from "react";
 
@@ -43,6 +44,27 @@ const List = () => {
           ))}
         </ul>
       )}
+      <BoxCard style="success">
+        <p className="title">Lorem ipsum dolor sit amet.</p>
+        <p className="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+          commodi.
+        </p>
+      </BoxCard>
+      <BoxCard style="alert">
+        <p className="title">Lorem ipsum dolor sit amet.</p>
+        <p className="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+          commodi.
+        </p>
+      </BoxCard>
+      <BoxCard style="warning">
+        <p className="title">Lorem ipsum dolor sit amet.</p>
+        <p className="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+          commodi.
+        </p>
+      </BoxCard>
     </div>
   );
 };
