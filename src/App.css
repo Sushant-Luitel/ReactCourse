@@ -59,3 +59,10 @@ button:hover {
 .reset-button {
   background-color: rgb(38, 136, 223);
 }
+
+.complete {
+  box-shadow: 5px 5px 10px rgb(8, 91, 30);
+}
+.incomplete {
+  box-shadow: 5px 5px 10px rgb(238, 9, 9);
+}

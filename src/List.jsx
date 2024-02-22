@@ -18,7 +18,7 @@ const List = () => {
       completed: true,
     },
   ]);
-  const [ShowText, setShowText] = useState(false);
+  const [ShowText, setShowText] = useState(true);
 
   const handleDelete = (id) => {
     let newTask = tasks.filter((task) => {
@@ -30,15 +30,22 @@ const List = () => {
   return (
     <div className="container">
       <button
-        className="button reset-button"
+        className="button reset-button ${}"
         onClick={() => setShowText(!ShowText)}
       >
-        {ShowText ? "Hide" : "Show"}
+        Toggle
       </button>
       {ShowText && (
         <ul>
           {tasks.map((task) => (
-            <li className="row container list-item" key={task.id}>
+            <li
+              className={
+                task.completed
+                  ? "complete row container"
+                  : "row container incomplete"
+              }
+              key={task.id}
+            >
               <div className="col">
                 <span>{task.id}</span> - <span>{task.name}</span>
               </div>
