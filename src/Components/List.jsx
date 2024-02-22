@@ -1,3 +1,4 @@
+import { ListItem } from "./ListItem";
 import React, { useState } from "react";
 
 const List = () => {
@@ -38,26 +39,7 @@ const List = () => {
       {ShowText && (
         <ul>
           {tasks.map((task) => (
-            <li
-              className={
-                task.completed
-                  ? "complete row container"
-                  : "row container incomplete"
-              }
-              key={task.id}
-            >
-              <div className="col">
-                <span>{task.id}</span> - <span>{task.name}</span>
-              </div>
-              <div className="col">
-                <button
-                  className="button add-button"
-                  onClick={() => handleDelete(task.id)}
-                >
-                  Delete
-                </button>
-              </div>
-            </li>
+            <ListItem handleDelete={handleDelete} task={task} />
           ))}
         </ul>
       )}
