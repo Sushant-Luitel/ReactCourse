@@ -37,6 +37,7 @@ const List = () => {
       >
         Toggle
       </button>
+      <h1>Task List</h1>
       {ShowText && (
         <ul>
           {tasks.map((task) => (
@@ -44,7 +45,7 @@ const List = () => {
           ))}
         </ul>
       )}
-      <BoxCard style="success">
+      {/* <BoxCard style="success">
         <p className="title">Lorem ipsum dolor sit amet.</p>
         <p className="description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
@@ -64,7 +65,7 @@ const List = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
           commodi.
         </p>
-      </BoxCard>
+      </BoxCard> */}
     </div>
   );
 };

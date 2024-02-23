@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+li {
+  list-style-type: none;
+}
+section {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 1em;
+  margin-right: 2em;
+  border-radius: 1em;
+  outline: none;
+  border: 0.3px solid gray;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
