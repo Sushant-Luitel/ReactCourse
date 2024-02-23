@@ -12,7 +12,7 @@ const List = () => {
     {
       id: 2,
       name: "Make .Net Notes",
-      completed: false,
+      completed: true,
     },
     {
       id: 3,

@@ -1,0 +1,9 @@
+.add-item input {
+  padding: 0.6em;
+  border-radius: 0.4em;
+  margin-inline: 1em 4em;
+  font-size: 1rem;
+}
+.add-item input::placeholder {
+  font-size: 1rem;
+}
