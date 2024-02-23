@@ -41,7 +41,7 @@ const List = () => {
       {ShowText && (
         <ul>
           {tasks.map((task) => (
-            <ListItem handleDelete={handleDelete} task={task} />
+            <ListItem key={task.id} handleDelete={handleDelete} task={task} />
           ))}
         </ul>
       )}
