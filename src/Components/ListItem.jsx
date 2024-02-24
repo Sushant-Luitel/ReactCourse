@@ -1,15 +1,14 @@
 import React from "react";
 import "./ListItem.css";
-export function ListItem({ handleDelete, task }) {
+export function ListItem({ handleDelete, task, index }) {
   return (
     <li
       className={
         task.completed ? "complete row container" : "row container incomplete"
       }
-      key={task.id}
     >
       <div className="col">
-        <span>{task.id}</span> - <span>{task.name}</span>
+        <span>{index + 1}</span> - <span>{task.name}</span>
       </div>
       <div className="col">
         <button

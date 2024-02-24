@@ -2,24 +2,7 @@ import { BoxCard } from "./BoxCard";
 import { ListItem } from "./ListItem";
 import React, { useState } from "react";
 
-const List = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      name: "Prepare E-governance Presentation",
-      completed: false,
-    },
-    {
-      id: 2,
-      name: "Make .Net Notes",
-      completed: true,
-    },
-    {
-      id: 3,
-      name: "Get Internship",
-      completed: true,
-    },
-  ]);
+const List = ({ tasks, setTasks }) => {
   const [ShowText, setShowText] = useState(true);
 
   const handleDelete = (id) => {
@@ -40,8 +23,13 @@ const List = () => {
       <h1>Task List</h1>
       {ShowText && (
         <ul>
-          {tasks.map((task) => (
-            <ListItem key={task.id} handleDelete={handleDelete} task={task} />
+          {tasks.map((task, index) => (
+            <ListItem
+              index={index}
+              key={task.id}
+              handleDelete={handleDelete}
+              task={task}
+            />
           ))}
         </ul>
       )}

@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./AddItem.css";
-const AddItem = () => {
-  const [inputValue, setInputValue] = useState("");
+const AddItem = ({ tasks, setTasks }) => {
+  const taskRef = useRef("");
   const [progress, setProgress] = useState(false);
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  };
+
   function handleSubmit(e) {
     e.preventDefault();
     const task = {
       id: Math.floor(Math.random() * 1000000),
-      name: inputValue,
+      name: taskRef.current.value,
       completed: Boolean(progress),
     };
     console.log(task);
+    setTasks([...tasks, task]);
+
     ResetValue();
   }
 
   const ResetValue = () => {
-    setInputValue("");
+    taskRef.current.value = "";
     setProgress(false);
   };
 
@@ -27,15 +27,18 @@ const AddItem = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="Name">Name</label>
         <input
-          value={inputValue}
-          onChange={handleChange}
+          ref={taskRef}
           type="text"
           id="Name"
           name="Name"
           placeholder="Enter your name"
           autoComplete="off"
         />
-        <select onChange={(e) => setProgress(e.target.value)} value={progress}>
+        <select
+          className="select-field"
+          onChange={(e) => setProgress(e.target.value)}
+          value={progress}
+        >
           <option value="false">Pending</option>
           <option value="true">Completed</option>
         </select>
@@ -45,7 +48,6 @@ const AddItem = () => {
         <span className="reset add-button" onClick={ResetValue}>
           Reset
         </span>
-        <h1>Name= {inputValue}</h1>
       </form>
     </section>
   );

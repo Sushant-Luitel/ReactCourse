@@ -11,6 +11,10 @@ body {
 li {
   list-style-type: none;
 }
+main {
+  padding: 2em 0.5em;
+  min-height: 90vh;
+}
 section {
   width: 100%;
   text-align: center;
